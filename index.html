@@ -45,6 +45,12 @@
             <li class="nav-item">
               <a class="nav-link" href="#contato">Contato</a>
             </li>
+
+            <li class="nav-item ms-2">
+              <button id="modoEscuro" class="btn btn-outline fs-3">
+                🌙
+              </button>
+            </li>
           </ul>
         </div>
       </div>
@@ -61,7 +67,7 @@
               Cursos completos para quem deseja ingressar na área de tecnologia.
             </p>
 
-            <a href="#cursos" class="btn btn-light btn-lg">
+            <a href="#cursos" class="btn btn-light btn-lg btn-outline-dark">
               Conheça os Cursos
             </a>
           </div>
@@ -78,8 +84,6 @@
       <button id="toggleConteudo" class="btn btn-success">
         Mostrar/Ocultar Conteúdo
       </button>
-
-      <button id="modoEscuro" class="btn btn-dark">Modo Escuro</button>
     </section>
 
     <!-- Conteúdo -->
@@ -122,11 +126,31 @@
     <!-- Cursos -->
     <section id="cursos" class="container py-5">
       <h2 class="text-center mb-5">Nossos Cursos</h2>
+      <p class="text-center fs-5 pesquisa">
+        Itens Disponíveis: <span id="contadorCursos">0</span>
+      </p>
+
+      <div class="row mb-5">
+        <div class="col-md-6 mx-auto">
+      
+          <div class="search-box">
+            <span class="search-icon">🔍</span>
+      
+            <input
+              type="text"
+              id="pesquisaCurso"
+              class="form-control"
+              placeholder="Pesquisar curso..."
+            >
+          </div>
+      
+        </div>
+      </div>
 
       <div class="row g-4">
         <!-- WEB -->
         <div class="col-lg-4 col-md-6 col-sm-12">
-          <div class="card h-100">
+          <div class="card h-100 curso-card">
             <img src="images/web.jpg" class="card-img-top" />
 
             <div class="card-body">
@@ -146,7 +170,7 @@
 
         <!-- BANCO -->
         <div class="col-lg-4 col-md-6 col-sm-12">
-          <div class="card h-100">
+          <div class="card h-100 curso-card">
             <img src="images/banco-de-dados.jpg" class="card-img-top" />
 
             <div class="card-body">
@@ -166,7 +190,7 @@
 
         <!-- C# -->
         <div class="col-lg-4 col-md-6 col-sm-12">
-          <div class="card h-100">
+          <div class="card h-100 curso-card">
             <img src="images/C-sharp.jpg" class="card-img-top" />
 
             <div class="card-body">
@@ -186,7 +210,7 @@
 
         <!-- JAVA -->
         <div class="col-lg-4 col-md-6 col-sm-12">
-          <div class="card h-100">
+          <div class="card h-100 curso-card">
             <img src="images/java.jpg" class="card-img-top" />
 
             <div class="card-body">
@@ -206,7 +230,7 @@
 
         <!-- IoT -->
         <div class="col-lg-4 col-md-6 col-sm-12">
-          <div class="card h-100">
+          <div class="card h-100 curso-card">
             <img src="images/Iot.jpg" class="card-img-top" />
 
             <div class="card-body">
@@ -226,7 +250,7 @@
 
         <!-- IA -->
         <div class="col-lg-4 col-md-6 col-sm-12">
-          <div class="card h-100">
+          <div class="card h-100 curso-card">
             <img src="images/Ia.jpg" class="card-img-top" />
 
             <div class="card-body">
@@ -266,9 +290,78 @@
 
     <!-- Contato -->
     <section id="contato" class="container py-5">
-      <h2 class="text-center">Contato</h2>
+      <h2 class="text-center mb-5">Entre em Contato</h2>
 
-      <p class="text-center">contato@baioschool.com</p>
+      <div class="row g-4">
+        <div class="col-md-5">
+          <div class="card h-100 shadow">
+            <div class="card-body">
+              <h4 class="mb-4">Informações</h4>
+
+              <p>
+                📧 <strong>Email:</strong><br />
+                contato@baioschool.com
+              </p>
+
+              <p>
+                📱 <strong>Telefone:</strong><br />
+                (14) 99999-9999
+              </p>
+
+              <p>
+                📍 <strong>Localização:</strong><br />
+                Brotas - SP
+              </p>
+
+              <p>
+                💻 <strong>Atendimento:</strong><br />
+                Segunda à Sexta das 08h às 18h
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-7">
+          <div class="card shadow">
+            <div class="card-body">
+              <h4 class="mb-4">Envie uma mensagem</h4>
+
+              <form>
+                <div class="mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Seu nome"
+                    required
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Seu e-mail"
+                    required
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <textarea
+                    class="form-control"
+                    rows="5"
+                    placeholder="Digite sua mensagem"
+                    required
+                  ></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                  Enviar Mensagem
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <footer class="bg-primary text-white text-center p-3">
@@ -290,7 +383,11 @@
           </div>
 
           <div class="modal-body">
-            Aprenda HTML, CSS, JavaScript e Bootstrap.
+            <p>
+              Aprenda a criar sites modernos e responsivos utilizando HTML, CSS,
+              JavaScript e Bootstrap. Desenvolva projetos completos e adquira as
+              habilidades necessárias para atuar como desenvolvedor front-end.
+            </p>
           </div>
         </div>
       </div>
@@ -311,7 +408,12 @@
           </div>
 
           <div class="modal-body">
-            Aprenda SQL, modelagem de dados e bancos relacionais.
+            <p>
+              Domine os conceitos de armazenamento e gerenciamento de
+              informações, aprendendo modelagem de dados, criação de tabelas e
+              consultas SQL para desenvolver sistemas mais eficientes e
+              organizados.
+            </p>
           </div>
         </div>
       </div>
@@ -359,6 +461,103 @@
             >
               Fechar
             </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalCsharp" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">C#</h5>
+
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <p>
+              Desenvolva aplicações utilizando C# e os princípios da Programação
+              Orientada a Objetos, criando sistemas robustos e escaláveis para
+              diferentes tipos de projetos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalJava" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Java</h5>
+
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <p>
+              Aprenda uma das linguagens mais utilizadas do mercado para criar
+              aplicações desktop, web e corporativas, explorando desde os
+              conceitos básicos até recursos avançados da linguagem.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalIot" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Internet das Coisas</h5>
+
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <p>
+              Explore o universo da Internet das Coisas (IoT), desenvolvendo
+              sistemas conectados com Arduino e ESP32 para monitoramento,
+              controle e automação de ambientes em tempo real.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalIa" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Inteligência Artificial</h5>
+
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <p>
+              Conheça os fundamentos da Inteligência Artificial, explorando
+              técnicas de aprendizado de máquina, análise de dados e ferramentas
+              modernas capazes de criar soluções inovadoras para diversos
+              setores.
+            </p>
           </div>
         </div>
       </div>
